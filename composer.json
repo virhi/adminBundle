@@ -17,10 +17,6 @@
         }
     },
 
-    "autoload-dev": {
-        "psr-4": { "Virhi\\AdminBundle\\Tests\\": "Tests/" }
-    },
-
     "require": {
         "almasaeed2010/adminlte": "@dev"
     }
