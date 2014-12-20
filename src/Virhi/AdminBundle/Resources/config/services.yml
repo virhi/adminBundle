@@ -1,0 +1,7 @@
+parameters:
+#    virhi_admin.example.class: Virhi\AdminBundle\Example
+
+services:
+#    virhi_admin.example:
+#        class: %virhi_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

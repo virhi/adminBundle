@@ -1,0 +1,27 @@
+{
+    "name": "virhi/adminBundle",
+    "description": "admin bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vincent Rhino",
+            "email": "vincent.rhino@gmail.com",
+            "role": "Developer"
+        }
+    ],
+
+    "autoload": {
+        "psr-4": {
+            "Virhi\\RestApiDoctrineBundle\\": "src/Virhi/AdminBundle/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": { "Virhi\\RestApiDoctrineBundle\\Tests\\": "Tests/" }
+    },
+
+    "require": {
+        "almasaeed2010/adminlte": "@dev"
+    }
+}
