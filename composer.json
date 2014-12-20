@@ -13,12 +13,12 @@
 
     "autoload": {
         "psr-4": {
-            "Virhi\\RestApiDoctrineBundle\\": "src/Virhi/AdminBundle/"
+            "Virhi\\AdminBundle\\": "src/Virhi/AdminBundle/"
         }
     },
 
     "autoload-dev": {
-        "psr-4": { "Virhi\\RestApiDoctrineBundle\\Tests\\": "Tests/" }
+        "psr-4": { "Virhi\\AdminBundle\\Tests\\": "Tests/" }
     },
 
     "require": {
