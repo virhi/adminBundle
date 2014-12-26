@@ -16,4 +16,9 @@ class AdminController extends Controller
     {
         return $this->render('VirhiAdminBundle:Admin:dashbord.html.twig', array());
     }
+
+    public function menuAction($current)
+    {
+        return $this->render('VirhiAdminBundle:Admin:sidebar.html.twig');
+    }
 } 

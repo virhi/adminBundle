@@ -1,14 +1,12 @@
 <head>
     <meta charset="UTF-8">
-    <title>AdminLTE | Dashboard</title>
+    {% include 'VirhiAdminBundle:Admin:head_title.html.twig' %}
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="/css/bootstrap.css" rel="stylesheet" type="text/css" />
     <!-- Theme style -->
     <link href="/css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
-    {% stylesheets
-    '@VirhiUiRestApiDoctrineBundle/Resources/public/css/style.css'
-    %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
+    {% include 'VirhiAdminBundle:Admin:head_css.html.twig' %}
+
+
 </head>

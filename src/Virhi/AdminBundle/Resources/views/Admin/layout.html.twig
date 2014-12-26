@@ -5,10 +5,7 @@
         <!-- header logo: style can be found in header.less -->
         {% include 'VirhiAdminBundle:Admin:header.html.twig' %}
         <div class="wrapper row-offcanvas row-offcanvas-left">
-            {#
-                {% include 'VirhiAdminBundle:Admin:sidebar.html.twig' %}
-            #}
-            {{ render(controller('VirhiUiRestApiDoctrineBundle:Page:menu', { 'current': 'post' })) }}
+            {{ render(controller('VirhiAdminBundle:Admin:menu', { 'current': '' })) }}
             <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
                 <!-- Content Header (Page header) -->
