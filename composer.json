@@ -15,9 +15,5 @@
         "psr-4": {
             "Virhi\\AdminBundle\\": "src/Virhi/AdminBundle/"
         }
-    },
-
-    "require": {
-        "almasaeed2010/adminlte": "@dev"
     }
 }
