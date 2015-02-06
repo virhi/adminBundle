@@ -10,7 +10,9 @@
             "role": "Developer"
         }
     ],
-
+    "require": {
+        "almasaeed2010/adminlte": "1.3.*"
+    },
     "autoload": {
         "psr-4": {
             "Virhi\\AdminBundle\\": "src/Virhi/AdminBundle/"
