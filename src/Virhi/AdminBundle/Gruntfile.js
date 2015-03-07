@@ -37,28 +37,7 @@ module.exports = function(grunt) {
                 filter: 'isFile',
                 expand: true,
                 flatten: true
-            }/*
-            ,font_awesome: {
-                src: 'lib/font-awesome-4.2.0/fonts/*',
-                dest: 'public/',
-                filter: 'isFile',
-                expand: true,
-                flatten: true
             }
-            ,font_awesome: {
-                src: 'lib/font-awesome-4.2.0/fonts/*',
-                dest: 'public/',
-                filter: 'isFile',
-                expand: true,
-                flatten: true
-            }
-            ,images: {
-                src: 'resources/images/*',
-                dest: 'public/',
-                filter: 'isFile',
-                expand: true,
-                flatten: true
-            }*/
         }
     });
 
