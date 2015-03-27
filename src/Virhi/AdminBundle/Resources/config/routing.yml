@@ -1,3 +1,7 @@
 virhi_admin_admin:
-    path:     /admin
-    defaults: { _controller: VirhiAdminBundle:Admin:adminDashbord }
+    path:     /demo
+    defaults: { _controller: VirhiAdminBundle:Demo:index }
+
+virhi_admin_admin_sidebar:
+    path:     /demo/sidebar
+    defaults: { _controller: VirhiAdminBundle:Demo:sidebar }

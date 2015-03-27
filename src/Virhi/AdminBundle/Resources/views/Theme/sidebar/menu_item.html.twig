@@ -1,0 +1,5 @@
+{% if menu_item.header == true %}
+    <li class="header">{{ menu_item.label }}</li>
+{% else %}
+    <li><a href="{{ menu_item.url }}"><i class="fa fa-circle-o text-danger"></i>{{ menu_item.label }}</a></li>
+{% endif %}

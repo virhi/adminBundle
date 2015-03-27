@@ -1,0 +1,6 @@
+<!-- sidebar menu: : style can be found in sidebar.less -->
+<ul class="sidebar-menu">
+    {% for menu_item in menu_item_list %}
+        {% include 'VirhiAdminBundle:Theme:sidebar/menu_item.html.twig' with {'menu_item': menu_item} only %}
+    {% endfor %}
+</ul>
