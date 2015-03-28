@@ -1,10 +1,12 @@
 module.exports = function(grunt) {
 
     var ressourcePath = 'src/Virhi/AdminBundle/Resources/';
+    var libPath      = ressourcePath + 'lib/';
     var vendorPath   = 'vendor/';
     var adminltePath = vendorPath + 'almasaeed2010/adminlte/';
-    var boostrapPath = adminltePath + 'bootstrap/';
     var pluginPath   = adminltePath + 'plugins/';
+    var node_module  = 'node_module';
+    var boostrapPath = node_module + 'bootstrap/';
 
     // Project configuration.
     grunt.initConfig({
@@ -17,7 +19,7 @@ module.exports = function(grunt) {
                 files: {
                     'src/Virhi/AdminBundle/Resources/public/js/virhiadmin.js': [
                         pluginPath + 'jQuery/jQuery-2.1.3.min.js',
-                        boostrapPath + 'js/bootstrap.js',
+                        boostrapPath + 'dist/js/bootstrap.js',
                         adminltePath + 'dist/js/app.js',
                         pluginPath + 'input-mask/jquery.inputmask.js',
                         pluginPath + 'input-mask/jquery.inputmask.date.extensions.js',
@@ -29,7 +31,15 @@ module.exports = function(grunt) {
             }
         },
         less: {
-            dev: {
+            bootstrap: {
+                options: {
+                    paths: ["assets/css"]
+                },
+                files: {
+                    "src/Virhi/AdminBundle/Resources/public/css/bootstrap.css": ressourcePath + "less/Bootstrap.less"
+                }
+            },
+            adminlte: {
                 options: {
                     paths: ["assets/css"]
                 },
@@ -47,22 +57,27 @@ module.exports = function(grunt) {
             target: {
                 files: {
                     'src/Virhi/AdminBundle/Resources/public/css/virhiadminstyle.css': [
-                        boostrapPath + 'css/bootstrap.css',
+                        ressourcePath + 'public/css/bootstrap.css',
                         ressourcePath + 'public/css/adminlte.css',
                         pluginPath + 'daterangepicker/daterangepicker-bs3.css',
-                        pluginPath + 'timepicker/bootstrap-timepicker.css'
+                        pluginPath + 'timepicker/bootstrap-timepicker.css',
                     ]
                 }
             }
         },
 
         copy: {
-            css: {
-                src: 'Resources/public/css/virhiadminstyle.css',
-                dest: '../../../../../../web/css/',
-                filter: 'isFile',
-                expand: true,
-                flatten: true
+            fontawasome: {
+                cwd: libPath + 'font-awesome/fonts',  // set working folder / root to copy
+                src: '**/*',           // copy all files and subfolders
+                dest: ressourcePath + 'public/font/font-awesome',    // destination folder
+                expand: true           // required when using cwd
+            },
+            glyphicons: {
+                cwd: boostrapPath + 'fonts',  // set working folder / root to copy
+                src: '**/*',           // copy all files and subfolders
+                dest: ressourcePath + 'public/font/glyphicons',    // destination folder
+                expand: true           // required when using cwd
             }
         }
     });
@@ -76,6 +91,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('css', ['less', 'cssmin']);
     grunt.registerTask('js', ['uglify']);
-    grunt.registerTask('default', ['css', 'js']);
+    grunt.registerTask('default', ['css', 'js', 'copy']);
 
 };
