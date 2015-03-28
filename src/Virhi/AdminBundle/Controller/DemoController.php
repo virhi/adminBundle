@@ -42,15 +42,26 @@ class DemoController extends Controller
         return $this->render('VirhiAdminBundle:Demo:tableAdvance.html.twig', $viewParams);
     }
 
+    public function iconsAction()
+    {
+        $viewParams = array(
+        );
+        return $this->render('VirhiAdminBundle:Demo:icons.html.twig', $viewParams);
+    }
+
 
 
     public function sidebarAction()
     {
         $menu = array(
-            new MenuItem("MAIN NAVIGATION"),
-            new MenuItem("Form", "/demo/form"),
-            new MenuItem("Important", "#"),
-            new MenuItem("Warning", "#"),
+            new MenuItem("Generale"),
+            new MenuItem("Home", $this->get('router')->generate('virhi_admin_admin')),
+            new MenuItem("Icons", $this->get('router')->generate('virhi_admin_admin_icons')),
+            new MenuItem("Forms"),
+            new MenuItem("Form", $this->get('router')->generate('virhi_admin_admin_form')),
+            new MenuItem("Tables"),
+            new MenuItem("Simples", $this->get('router')->generate('virhi_admin_admin_table')),
+            new MenuItem("Advance", $this->get('router')->generate('virhi_admin_admin_table_advance')),
         );
 
         $viewParams = array(

@@ -1,5 +1,5 @@
 virhi_admin_admin:
-    path:     /
+    path:     /home
     defaults: { _controller: VirhiAdminBundle:Demo:index }
 
 virhi_admin_admin_sidebar:
@@ -17,3 +17,7 @@ virhi_admin_admin_table:
 virhi_admin_admin_table_advance:
     path:     /table_advance
     defaults: { _controller: VirhiAdminBundle:Demo:tableAdvance }
+
+virhi_admin_admin_icons:
+    path:     /icons
+    defaults: { _controller: VirhiAdminBundle:Demo:icons }
