@@ -15,7 +15,16 @@ module.exports = function(grunt) {
             },
             dev: {
                 files: {
-                    'src/Virhi/AdminBundle/Resources/public/js/virhiadmin.js': [pluginPath + 'jQuery/jQuery-2.1.3.min.js', boostrapPath + 'js/bootstrap.js', adminltePath + 'dist/js/app.js']
+                    'src/Virhi/AdminBundle/Resources/public/js/virhiadmin.js': [
+                        pluginPath + 'jQuery/jQuery-2.1.3.min.js',
+                        boostrapPath + 'js/bootstrap.js',
+                        adminltePath + 'dist/js/app.js',
+                        pluginPath + 'input-mask/jquery.inputmask.js',
+                        pluginPath + 'input-mask/jquery.inputmask.date.extensions.js',
+                        pluginPath + 'input-mask/jquery.inputmask.extensions.js',
+                        pluginPath + 'daterangepicker/daterangepicker.js',
+                        pluginPath + 'timepicker/bootstrap-timepicker.js',
+                    ]
                 }
             }
         },
@@ -37,7 +46,12 @@ module.exports = function(grunt) {
             },
             target: {
                 files: {
-                    'src/Virhi/AdminBundle/Resources/public/css/virhiadminstyle.css': [boostrapPath + 'css/bootstrap.css', ressourcePath + 'public/css/adminlte.css']
+                    'src/Virhi/AdminBundle/Resources/public/css/virhiadminstyle.css': [
+                        boostrapPath + 'css/bootstrap.css',
+                        ressourcePath + 'public/css/adminlte.css',
+                        pluginPath + 'daterangepicker/daterangepicker-bs3.css',
+                        pluginPath + 'timepicker/bootstrap-timepicker.css'
+                    ]
                 }
             }
         },
