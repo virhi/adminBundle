@@ -1,34 +1,24 @@
 <!DOCTYPE html>
 <html>
-    {% block head %}
-        {% include 'VirhiAdminBundle:Theme:head.html.twig' %}
-    {% endblock %}
+
+    {% include 'VirhiAdminBundle:Theme:head.html.twig' %}
     <body class="skin-blue">
     <!-- Site wrapper -->
         <div class="wrapper">
-            {% block header %}
-                {% include 'VirhiAdminBundle:Theme:header.html.twig' %}
-            {% endblock %}
+            {{ render(controller('VirhiAdminBundle:Demo:header')) }}
             <!-- =============================================== -->
-            {% block sidebar %}
-                {{ render(controller('VirhiAdminBundle:Demo:sidebar')) }}
-            {% endblock %}
+            {{ render(controller('VirhiAdminBundle:Demo:sidebar')) }}
             <!-- =============================================== -->
             <!-- Right side column. Contains the navbar and content of the page -->
             <div class="content-wrapper">
-                {% block contentHeader %}
-                    {% include 'VirhiAdminBundle:Theme:contentHeader.html.twig' %}
-                {% endblock %}
+                {% include 'VirhiAdminBundle:Theme:contentHeader.html.twig' %}
                 <!-- Main content -->
                 <section class="content">
                     {% block content %}
                     {% endblock %}
                 </section><!-- /.content -->
             </div><!-- /.content-wrapper -->
-
-            {% block footer %}
-                {% include 'VirhiAdminBundle:Theme:footer.html.twig' %}
-            {% endblock %}
+            {{ render(controller('VirhiAdminBundle:Demo:footer')) }}
         </div><!-- ./wrapper -->
 
     {% block javascript %}

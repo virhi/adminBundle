@@ -1,0 +1,11 @@
+virhi_admin_admin:
+    path:     /
+    defaults: { _controller: VirhiAdminBundle:Demo:index }
+
+virhi_admin_admin_sidebar:
+    path:     /demo/sidebar
+    defaults: { _controller: VirhiAdminBundle:Demo:sidebar }
+
+virhi_admin_admin_form:
+    path:     /form
+    defaults: { _controller: VirhiAdminBundle:Demo:form }
