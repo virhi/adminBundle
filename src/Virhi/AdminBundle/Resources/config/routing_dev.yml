@@ -9,3 +9,11 @@ virhi_admin_admin_sidebar:
 virhi_admin_admin_form:
     path:     /form
     defaults: { _controller: VirhiAdminBundle:Demo:form }
+
+virhi_admin_admin_table:
+    path:     /table
+    defaults: { _controller: VirhiAdminBundle:Demo:table }
+
+virhi_admin_admin_table_advance:
+    path:     /table_advance
+    defaults: { _controller: VirhiAdminBundle:Demo:tableAdvance }

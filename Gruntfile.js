@@ -5,8 +5,9 @@ module.exports = function(grunt) {
     var vendorPath   = 'vendor/';
     var adminltePath = vendorPath + 'almasaeed2010/adminlte/';
     var pluginPath   = adminltePath + 'plugins/';
-    var node_module  = 'node_module';
+    var node_module  = 'node_module/';
     var boostrapPath = node_module + 'bootstrap/';
+    var adminlteBoostrapPath = adminltePath + 'bootstrap/';
 
     // Project configuration.
     grunt.initConfig({
@@ -16,16 +17,22 @@ module.exports = function(grunt) {
                 mangle: false
             },
             dev: {
+                options: {
+                    beautify: true
+                },
                 files: {
                     'src/Virhi/AdminBundle/Resources/public/js/virhiadmin.js': [
                         pluginPath + 'jQuery/jQuery-2.1.3.min.js',
-                        boostrapPath + 'dist/js/bootstrap.js',
+                        adminlteBoostrapPath + 'js/bootstrap.js',
                         adminltePath + 'dist/js/app.js',
                         pluginPath + 'input-mask/jquery.inputmask.js',
                         pluginPath + 'input-mask/jquery.inputmask.date.extensions.js',
                         pluginPath + 'input-mask/jquery.inputmask.extensions.js',
                         pluginPath + 'daterangepicker/daterangepicker.js',
                         pluginPath + 'timepicker/bootstrap-timepicker.js',
+                        pluginPath + 'datatables/jquery.dataTables.js',
+                        pluginPath + 'datatables/dataTables.bootstrap.js',
+                        pluginPath + 'slimScroll/jquery.slimscroll.min.js',
                     ]
                 }
             }
@@ -46,6 +53,14 @@ module.exports = function(grunt) {
                 files: {
                     "src/Virhi/AdminBundle/Resources/public/css/adminlte.css": ressourcePath + "less/Admin.less"
                 }
+            },
+            datatables: {
+                options: {
+                    paths: ["assets/css"]
+                },
+                files: {
+                    "src/Virhi/AdminBundle/Resources/public/css/datatables.css": ressourcePath + "less/datatables.less"
+                }
             }
         },
 
@@ -59,6 +74,7 @@ module.exports = function(grunt) {
                     'src/Virhi/AdminBundle/Resources/public/css/virhiadminstyle.css': [
                         ressourcePath + 'public/css/bootstrap.css',
                         ressourcePath + 'public/css/adminlte.css',
+                        ressourcePath + 'public/css/datatables.css',
                         pluginPath + 'daterangepicker/daterangepicker-bs3.css',
                         pluginPath + 'timepicker/bootstrap-timepicker.css',
                     ]
@@ -77,6 +93,12 @@ module.exports = function(grunt) {
                 cwd: boostrapPath + 'fonts',  // set working folder / root to copy
                 src: '**/*',           // copy all files and subfolders
                 dest: ressourcePath + 'public/font/glyphicons',    // destination folder
+                expand: true           // required when using cwd
+            },
+            datatables: {
+                cwd: pluginPath + 'datatables/images',  // set working folder / root to copy
+                src: '**/*',           // copy all files and subfolders
+                dest: ressourcePath + 'public/font/datatables',    // destination folder
                 expand: true           // required when using cwd
             }
         }

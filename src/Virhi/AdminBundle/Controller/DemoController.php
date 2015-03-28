@@ -28,6 +28,22 @@ class DemoController extends Controller
         return $this->render('VirhiAdminBundle:Demo:form.html.twig', $viewParams);
     }
 
+    public function tableAction()
+    {
+        $viewParams = array(
+        );
+        return $this->render('VirhiAdminBundle:Demo:table.html.twig', $viewParams);
+    }
+
+    public function tableAdvanceAction()
+    {
+        $viewParams = array(
+        );
+        return $this->render('VirhiAdminBundle:Demo:tableAdvance.html.twig', $viewParams);
+    }
+
+
+
     public function sidebarAction()
     {
         $menu = array(
